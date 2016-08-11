@@ -1,0 +1,6 @@
+"http://www.{default}/":
+  type: upstream
+  upstream: "frontend:http"
+"http://{default}/":
+  type: redirect
+  to: "http://www.{default}/"
