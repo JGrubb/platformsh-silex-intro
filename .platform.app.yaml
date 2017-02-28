@@ -2,7 +2,7 @@ name: app
 type: php:5.6
 build:
   flavor: composer
-disk: 2048
+disk: 4096
 
 web:
   locations:
@@ -12,3 +12,10 @@ web:
       index:
         - index.php
       allow: true
+
+relationships:
+  database: "pgsql:postgresql"
+
+mounts:
+  "cache/views": "shared:files/view_cache"
+  "cache/http": "shared:files/http_cache"
