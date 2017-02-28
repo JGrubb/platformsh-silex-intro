@@ -16,8 +16,11 @@ require_once APP_ROOT . '/inc/filters.php';
 $app->get('/', function() use ($app) {
     $sql = "SELECT * from posts ORDER BY pub_date DESC LIMIT 5";
     $posts = $app['db']->fetchAll($sql);
-    return $app['twig']->render('home.twig', [
+    $content = $app['twig']->render('home.twig', [
         'posts' => $posts
+    ]);
+    return new Response($content, 200, [
+        'cache-control' => 'public, max-age=30'
     ]);
 });
 
