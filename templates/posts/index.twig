@@ -1,0 +1,28 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="posts">
+
+    {% for post in posts %}
+    <section class="post">
+        <header class="post-header">
+
+            <h2 class="post-title">
+                <a href="/posts/{{ post.id }}-{{ post.slug }}">{{ post.title }}</a>
+            </h2>
+
+            <p class="post-meta">
+                <time>{{ post.pub_date | date("M d, Y") }}</time> in TAGS HERE
+            </p>
+        </header>
+
+        <div class="post-description">
+            <p>
+                {{ post.body | markdown | truncate }}
+            </p>
+        </div>
+    </section>
+    {% endfor %}
+
+</div>
+{% endblock %}

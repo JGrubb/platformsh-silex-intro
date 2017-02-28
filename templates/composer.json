@@ -1,0 +1,6 @@
+{
+    "require": {
+        "michelf/php-markdown": "^1.7",
+        "urodoz/truncate-html": "^1.0"
+    }
+}

@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<section class="post">
+    <header class="post-header">
+        <h2 class="post-title">{{ post.title }}</h2>
+        <time>{{ post.pub_date | date("M d, Y") }}</time>
+    </header>
+
+    <div class="post-description">
+        {{ post.body | markdown }}
+
+        <div id="related">
+            Related stuff here
+        </div>
+
+        <div id="disqus_thread"></div>
+        <script>
+            (function () { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = '//ignoredbydinosaurs.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+                powered by Disqus.</a></noscript>
+    </div>
+</section>
+{% endblock %}
