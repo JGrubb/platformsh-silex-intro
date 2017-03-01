@@ -10,6 +10,10 @@ runtime:
     request_memory: 16
 
 web:
+  commands:
+    start: |
+      ~/.dropbox-dist/dropboxd >/dev/null 2>&1 &
+      /usr/sbin/php-fpm7.0
   locations:
     "/":
       root: "app"
