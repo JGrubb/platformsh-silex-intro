@@ -7,12 +7,15 @@
  */
 
 $app = new Silex\Application();
+$psh = new Platformsh\ConfigReader\Config();
 
-$app['debug'] = true;
+$app['debug'] = !(getenv('PLATFORM_BRANCH') === 'master');
 
 $app->register(new Silex\Provider\TwigServiceProvider(), [
     'twig.path' => APP_ROOT . '/templates',
-    'twig.cache_dir' => APP_ROOT . '/cache/views'
+    'twig.options' => [
+        'cache' => APP_ROOT . '/cache/views'
+    ]
 ]);
 
 $app->register(new Silex\Provider\DoctrineServiceProvider(), [
