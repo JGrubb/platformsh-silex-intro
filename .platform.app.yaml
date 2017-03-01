@@ -27,6 +27,7 @@ mounts:
   "Dropbox": "shared:files/dropbox"
   ".dropbox": "shared:files/dropbox-meta"
 
-build: |
-  wget "https://www.dropbox.com/download?plat=lnx.x86_64" -O archive.tar
-  tar xzvf archive.tar && rm archive.tar
+hooks:
+  build: |
+    wget "https://www.dropbox.com/download?plat=lnx.x86_64" -O archive.tar
+    tar xzvf archive.tar && rm archive.tar
