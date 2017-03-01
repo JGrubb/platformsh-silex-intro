@@ -6,6 +6,8 @@ disk: 4096
 runtime:
   extensions:
     - pdo_pgsql
+  sizing_hints:
+    request_memory: 16
 
 web:
   locations:
