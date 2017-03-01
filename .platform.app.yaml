@@ -21,6 +21,11 @@ web:
       index:
         - index.php
       allow: true
+    "/uploads":
+      root: "Dropbox/ibd_website_images"
+      passthru: false
+      allow: true
+      scripts: false
 
 relationships:
   database: "pgsql:postgresql"
