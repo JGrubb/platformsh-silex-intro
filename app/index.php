@@ -49,7 +49,7 @@ $app->get('/posts/{id}-{slug}', function($id, $slug) use ($app) {
         'post' => $post
     ]);
     return new Response($content, 200, [
-//        'cache-control' => 'public, max-age=30'
+        'cache-control' => 'public, max-age=30'
     ]);
 });
 
