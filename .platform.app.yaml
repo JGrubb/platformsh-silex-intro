@@ -3,6 +3,9 @@ type: php:7.0
 build:
   flavor: composer
 disk: 4096
+runtime:
+  extensions:
+    - pdo_pgsql
 
 web:
   locations:
