@@ -2,7 +2,7 @@ https://www.{default}/:
   cache:
     cookies: []
     default_ttl: 30
-    enabled: true
+    enabled: false
     headers:
     - Accept
     - Accept-Language
