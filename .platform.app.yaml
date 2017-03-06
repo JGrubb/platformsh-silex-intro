@@ -40,3 +40,5 @@ hooks:
   build: |
     wget "https://www.dropbox.com/download?plat=lnx.x86_64" -O archive.tar
     tar xzvf archive.tar && rm archive.tar
+  deploy: |
+    rm -rf cache/views/*
