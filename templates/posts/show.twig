@@ -1,4 +1,6 @@
 {% extends "base.twig" %}
+{% block title %}{{ post.title }} | Ignored By Dinosaurs{% endblock %}
+{% block description %}{{ post.body | markdown | truncate | striptags }}{% endblock %}
 
 {% block content %}
 <section class="post">
