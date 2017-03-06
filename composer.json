@@ -1,11 +1,14 @@
 {
     "require": {
         "silex/silex": "^2.0",
-        "doctrine/orm": "^2.5",
         "twig/twig": "^2.1",
         "doctrine/dbal": "^2.5",
         "urodoz/truncate-html": "^1.0",
         "michelf/php-markdown": "^1.7",
-        "platformsh/config-reader": "^0.0.1"
+        "platformsh/config-reader": "^0.0.1",
+        "symfony/console": "^3.2"
+    },
+    "autoload": {
+        "psr-4": {"Ibd\\": "src/"}
     }
 }

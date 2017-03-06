@@ -27,3 +27,4 @@ class TestCommand extends Command
         $output->writeln('I love you guys');
     }
 }
+

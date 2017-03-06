@@ -3,11 +3,12 @@
 // application.php
 
 require __DIR__.'/../vendor/autoload.php';
-
+define('APP_ROOT', realpath(__DIR__ . '/../'));
 use Symfony\Component\Console\Application;
 
-$application = new Application();
+$app = new Application();
 
-$application->register(new Ibd\Command\TestCommand());
+$app->add(new \Ibd\Command\TestCommand());
+$app->add(new \Ibd\Command\Post\ListPostsCommand());
 
-$application->run();
+$app->run();

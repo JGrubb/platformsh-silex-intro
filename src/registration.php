@@ -6,7 +6,6 @@
  * Time: 11:12 AM
  */
 
-$app = new Silex\Application();
 $psh = new Platformsh\ConfigReader\Config();
 
 $app['debug'] = !(getenv('PLATFORM_BRANCH') === 'master');

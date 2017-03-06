@@ -10,9 +10,12 @@ use Symfony\Component\HttpFoundation\Response;
 define('APP_ROOT', realpath(__DIR__ . '/../'));
 
 require_once APP_ROOT . '/vendor/autoload.php';
-require_once APP_ROOT . '/inc/registration.php';
-require_once APP_ROOT . '/inc/filters.php';
-require_once APP_ROOT . '/inc/random.php';
+
+$app = new Silex\Application();
+
+require_once APP_ROOT . '/src/registration.php';
+require_once APP_ROOT . '/src/filters.php';
+require_once APP_ROOT . '/src/random.php';
 
 $app->get('/', function() use ($app) {
     $sql = "SELECT * from posts ORDER BY pub_date DESC LIMIT 5";
