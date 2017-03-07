@@ -17,9 +17,10 @@ $filter = new Twig_Filter('markdown', function($string) {
 
 $app['twig']->addFilter($filter);
 
-$filter = new Twig_Filter('truncate', function($string) {
+$filter = new Twig_Filter('truncate', function($string, $length = 500) {
+
     $truncator = new TruncateService();
-    return $truncator->truncate($string, 500);
+    return $truncator->truncate($string, $length);
 }, ['is_safe' => ['html']]);
 
 $app['twig']->addFilter($filter);
