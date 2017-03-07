@@ -8,7 +8,9 @@ use Symfony\Component\Console\Application;
 
 $app = new Application();
 
+require_once APP_ROOT . '/src/registration.php';
+
 $app->add(new \Ibd\Command\TestCommand());
-$app->add(new \Ibd\Command\Post\ListPostsCommand());
+$app->add(new \Ibd\Command\Post\PostListCommand());
 
 $app->run();
