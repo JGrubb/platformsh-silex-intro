@@ -44,6 +44,6 @@ hooks:
   build: |
     wget "https://www.dropbox.com/download?plat=lnx.x86_64" -O archive.tar
     tar xzvf archive.tar && rm archive.tar
-    pip install aws-cli
+    pip install awscli
   deploy: |
     rm -rf cache/views/*
