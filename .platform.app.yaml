@@ -9,6 +9,10 @@ runtime:
   sizing_hints:
     request_memory: 16
 
+dependencies:
+  python:
+    pip: "*"
+
 web:
   commands:
     start: |
@@ -40,5 +44,6 @@ hooks:
   build: |
     wget "https://www.dropbox.com/download?plat=lnx.x86_64" -O archive.tar
     tar xzvf archive.tar && rm archive.tar
+    pip install aws-cli
   deploy: |
     rm -rf cache/views/*
