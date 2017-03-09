@@ -5,7 +5,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 $psh = new Platformsh\ConfigReader\Config();
 
 if($psh->isAvailable()) {
-    $sql_filename = time() . '.sql';
+    $sql_filename = date('Y-m-d') . '.sql';
     $database = $psh->relationships['database'][0];
     $backup_path = getenv('PLATFORM_DIR') . "/backups/$sql_filename";
     putenv("PGPASSWORD={$database['password']}");
