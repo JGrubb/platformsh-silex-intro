@@ -1,10 +1,11 @@
 <?php
 
-require_once __DIR__ . '/vendor/autoload.php';
+$home_dir = getenv('PLATFORM_DIR');
+
+require_once $home_dir . '/vendor/autoload.php';
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
-$home_dir = getenv('PLATFORM_DIR');
 $logger = new Logger('backup_logger');
 $logger->pushHandler(new StreamHandler($home_dir . '/backups/log/backup.log', Logger::DEBUG));
 
