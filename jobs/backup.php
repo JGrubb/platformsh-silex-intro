@@ -4,8 +4,9 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
+$home_dir = getenv('PLATFORM_DIR');
 $logger = new Logger('backup_logger');
-$logger->pushHandler(new StreamHandler(__DIR__.'/backups/log/backup.log', Logger::DEBUG));
+$logger->pushHandler(new StreamHandler($home_dir . '/backups/log/backup.log', Logger::DEBUG));
 
 $psh = new Platformsh\ConfigReader\Config();
 if($psh->isAvailable() && getenv('PLATFORM_BRANCH') === 'master') {
@@ -13,7 +14,7 @@ if($psh->isAvailable() && getenv('PLATFORM_BRANCH') === 'master') {
     try {
         $sql_filename = date('Y-m-d') . '.sql';
         $database = $psh->relationships['database'][0];
-        $backup_path = getenv('PLATFORM_DIR') . "/backups/$sql_filename";
+        $backup_path = $home_dir . "/backups/$sql_filename";
         putenv("PGPASSWORD={$database['password']}");
         exec("pg_dump -U {$database['username']} -h {$database['host']} {$database['path']} > $backup_path");
 
