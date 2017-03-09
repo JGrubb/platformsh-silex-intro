@@ -6,7 +6,8 @@
         "urodoz/truncate-html": "^1.0",
         "michelf/php-markdown": "^1.7",
         "platformsh/config-reader": "^0.0.1",
-        "symfony/console": "^3.2"
+        "symfony/console": "^3.2",
+        "aws/aws-sdk-php": "^3.24"
     },
     "autoload": {
         "psr-4": {"Ibd\\": "src/"}

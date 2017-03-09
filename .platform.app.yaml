@@ -37,6 +37,7 @@ relationships:
 mounts:
   "cache/views": "shared:files/view_cache"
   "cache/http": "shared:files/http_cache"
+  "backups": "shared:files/backups"
   "Dropbox": "shared:files/dropbox"
   ".dropbox": "shared:files/dropbox-meta"
 
@@ -44,6 +45,5 @@ hooks:
   build: |
     wget "https://www.dropbox.com/download?plat=lnx.x86_64" -O archive.tar
     tar xzvf archive.tar && rm archive.tar
-    pip install awscli groff
   deploy: |
     rm -rf cache/views/*
