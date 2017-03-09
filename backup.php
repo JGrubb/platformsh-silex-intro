@@ -4,11 +4,10 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
-
-$psh = new Platformsh\ConfigReader\Config();
 $logger = new Logger('backup_logger');
 $logger->pushHandler(new StreamHandler(__DIR__.'/backups/log/backup.log', Logger::DEBUG));
 
+$psh = new Platformsh\ConfigReader\Config();
 if($psh->isAvailable() && getenv('PLATFORM_BRANCH') === 'master') {
 
     try {
