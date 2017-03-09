@@ -51,4 +51,4 @@ hooks:
 crons:
   db_backup:
     spec: "0 0 * * *"
-    cmd: "php ./backup.php"
+    cmd: "php ./jobs/db_backup.php"
