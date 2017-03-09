@@ -47,3 +47,8 @@ hooks:
     tar xzvf archive.tar && rm archive.tar
   deploy: |
     rm -rf cache/views/*
+
+crons:
+  db_backup:
+    spec: "0 0 * * *"
+    cmd: "php backup.php"

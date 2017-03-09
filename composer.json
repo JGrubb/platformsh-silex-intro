@@ -7,7 +7,8 @@
         "michelf/php-markdown": "^1.7",
         "platformsh/config-reader": "^0.0.1",
         "symfony/console": "^3.2",
-        "aws/aws-sdk-php": "^3.24"
+        "aws/aws-sdk-php": "^3.24",
+        "monolog/monolog": "^1.22"
     },
     "autoload": {
         "psr-4": {"Ibd\\": "src/"}
