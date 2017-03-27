@@ -12,6 +12,11 @@ runtime:
 dependencies:
   python:
     pip: "*"
+  ruby: 
+    sass: "3.2.14"
+    compass: "0.12.2"
+  nodejs:
+    grunt: "*"
 
 web:
   commands:
