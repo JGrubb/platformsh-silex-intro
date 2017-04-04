@@ -50,6 +50,8 @@ hooks:
   build: |
     wget "https://www.dropbox.com/download?plat=lnx.x86_64" -O archive.tar
     tar xzvf archive.tar && rm archive.tar
+    gzip -k app/css/app.css
+    gzip -k app/js/all.js
   deploy: |
     rm -rf cache/views/*
 
